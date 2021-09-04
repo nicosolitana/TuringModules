@@ -61,7 +61,7 @@ namespace TuringModules.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to mult,add,monus,divide,sub,swap,halt.
+        ///   Looks up a localized string similar to mult,add,monus,div,sub,swap,halt.
         /// </summary>
         internal static string NoParameter {
             get {
@@ -79,7 +79,7 @@ namespace TuringModules.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to const,shR,shL,copy,move,swap,mult,add,monus,divide,sub,ifGT,ifEQ,ifGE,ifLT,ifLE,goto,halt.
+        ///   Looks up a localized string similar to const,shR,shL,copy,move,swap,mult,add,monus,div,sub,ifGT,ifEQ,ifGE,ifLT,ifLE,goto,halt.
         /// </summary>
         internal static string SupportedModules {
             get {

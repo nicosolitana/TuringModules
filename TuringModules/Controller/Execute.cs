@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using TuringModules.Model;
 
 namespace TuringModules.Controller
@@ -16,10 +15,14 @@ namespace TuringModules.Controller
                 return false;
 
             SimulationData simData = new SimulationData();
-            simData.IO = new List<List<string>>();
+            simData.IO = extractor.ExtractInput(input);
             simData.TuringCode = TuringCode;
+            simData.Pointer = 0;
 
             // PERFORM SIMULATION HERE
+
+            Simulate simulator = new Simulate();
+            simulator.Start(simData);
 
             return true;
         }

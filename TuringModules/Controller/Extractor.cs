@@ -77,6 +77,25 @@ namespace TuringModules.Controller
             return mod;
         }
 
+        public List<string> ExtractInput(string input)
+        {
+            List<string> inputLst = new List<string>();
+            string temp = string.Empty;
+            input += "#";
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] == '#')
+                {
+                    if (!string.IsNullOrEmpty(temp))
+                        inputLst.Add(temp);
+                    temp = string.Empty;
+                    inputLst.Add("#");
+                }
+                else
+                    temp += input[i];
+            }
+            return inputLst;
+        }
 
         public List<Code> Extract(string code)
         {

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="NoParameter" xml:space="preserve">
-    <value>mult,add,monus,divide,sub,swap,halt</value>
+    <value>mult,add,monus,div,sub,swap,halt</value>
   </data>
   <data name="OneParameter" xml:space="preserve">
     <value>const,shR,shL,copy,ifGT,ifEQ,ifGE,ifLT,ifLE,goto</value>
   </data>
   <data name="SupportedModules" xml:space="preserve">
-    <value>const,shR,shL,copy,move,swap,mult,add,monus,divide,sub,ifGT,ifEQ,ifGE,ifLT,ifLE,goto,halt</value>
+    <value>const,shR,shL,copy,move,swap,mult,add,monus,div,sub,ifGT,ifEQ,ifGE,ifLT,ifLE,goto,halt</value>
   </data>
   <data name="TwoParameter" xml:space="preserve">
     <value>move</value>

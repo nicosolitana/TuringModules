@@ -18,7 +18,7 @@ namespace TuringModules
             try
             {
                 string code = txtProgram.Text;
-                string input = string.Empty;
+                string input = txtInputStr.Text;
                 Execute exec = new Execute();
                 bool res = exec.Start(input, code);
             }
