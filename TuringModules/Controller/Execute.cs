@@ -1,10 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Windows.Forms;
 using TuringModules.Model;
 
 namespace TuringModules.Controller
 {
     class Execute
     {
+        private void UpdateOutput(SimulationData simData)
+        {
+            TuringModGUI.Output.Invoke(new MethodInvoker(delegate
+            {
+                string output = String.Join("\t", simData.IO);
+                TuringModGUI.Output.Text = "X" + output;
+            }));
+        }
 
         public bool Start(string input, string code)
         {
@@ -20,10 +31,10 @@ namespace TuringModules.Controller
             simData.Pointer = 0;
 
             // PERFORM SIMULATION HERE
-
             Simulate simulator = new Simulate();
             simulator.Start(simData);
 
+            UpdateOutput(simData);
             return true;
         }
     }

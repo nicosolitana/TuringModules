@@ -39,6 +39,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExecute = new System.Windows.Forms.Button();
+            this.txtSimResult = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSimulation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +107,7 @@
             this.dgvSimulation.Name = "dgvSimulation";
             this.dgvSimulation.RowHeadersWidth = 51;
             this.dgvSimulation.RowTemplate.Height = 24;
-            this.dgvSimulation.Size = new System.Drawing.Size(541, 509);
+            this.dgvSimulation.Size = new System.Drawing.Size(541, 220);
             this.dgvSimulation.TabIndex = 10;
             // 
             // lblOuputString
@@ -151,11 +152,21 @@
             this.btnExecute.UseVisualStyleBackColor = true;
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
             // 
+            // txtSimResult
+            // 
+            this.txtSimResult.Font = new System.Drawing.Font("Product Sans", 12F);
+            this.txtSimResult.Location = new System.Drawing.Point(412, 334);
+            this.txtSimResult.Multiline = true;
+            this.txtSimResult.Name = "txtSimResult";
+            this.txtSimResult.Size = new System.Drawing.Size(541, 270);
+            this.txtSimResult.TabIndex = 19;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 699);
+            this.Controls.Add(this.txtSimResult);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnExecute);
             this.Controls.Add(this.lblOuputString);
@@ -191,6 +202,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExecute;
+        private System.Windows.Forms.TextBox txtSimResult;
     }
 }
 

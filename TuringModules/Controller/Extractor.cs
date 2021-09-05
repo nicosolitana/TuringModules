@@ -81,7 +81,6 @@ namespace TuringModules.Controller
         {
             List<string> inputLst = new List<string>();
             string temp = string.Empty;
-            input += "#";
             for (int i = 0; i < input.Length; i++)
             {
                 if (input[i] == '#')
