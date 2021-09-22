@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Printing;
 using System.Threading;
 using System.Windows.Forms;
 using TuringModules.Common;
@@ -14,9 +15,20 @@ namespace TuringModules
         public MainForm()
         {
             InitializeComponent();
+            ClearPanel();
             Validator.LoadResource();
-            TuringModGUI.Output = lblOuputString;
-            TuringModGUI.SimulationResult = txtSimResult;
+            TuringModGUI.SimulationPanel = pnlRes;
+            TuringModGUI.Result = txtResult;
+        }
+
+        private void ClearPanel()
+        {
+            pnlRes.Controls.Clear();
+            pnlRes.AutoScroll = false;
+            pnlRes.VerticalScroll.Enabled = true;
+            pnlRes.VerticalScroll.Visible = true;
+            pnlRes.HorizontalScroll.Visible = false;
+            pnlRes.AutoScroll = true;
         }
 
         private void btnExecute_Click(object sender, EventArgs e)
@@ -33,8 +45,10 @@ namespace TuringModules
 
         private void ResetGUI()
         {
-            TuringModGUI.Output.Text = string.Empty;
-            TuringModGUI.SimulationResult.Text = string.Empty;
+            TuringModGUI.SimulationPanel.Controls.Clear();
+            TuringModGUI.SimPanelLocY = 0;
+            TuringModGUI.Result.Text = string.Empty;
+            ClearPanel();
         }
 
         private void Execute()
@@ -54,7 +68,19 @@ namespace TuringModules
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            txtInputStr.Text = string.Empty;
+            txtProgram.Text = string.Empty;
+            ClearPanel();
+            ResetGUI();
+        }
 
+        private void cmbTestCase_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ResetGUI();
+            string selection = cmbTestCase.SelectedItem.ToString().Split('(')[0].Trim();
+            var input = TestCase.GetDefaultTestCase(selection);
+            txtInputStr.Text = input[0];
+            txtProgram.Text = input[1];
         }
     }
 }

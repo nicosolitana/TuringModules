@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\TestCase.cs" />
     <Compile Include="Controller\Execute.cs" />
     <Compile Include="Controller\Extractor.cs" />
     <Compile Include="Controller\Simulate.cs" />

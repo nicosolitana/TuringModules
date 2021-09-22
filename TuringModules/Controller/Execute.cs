@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Windows.Forms;
 using TuringModules.Model;
 
@@ -10,10 +9,10 @@ namespace TuringModules.Controller
     {
         private void UpdateOutput(SimulationData simData)
         {
-            TuringModGUI.Output.Invoke(new MethodInvoker(delegate
+            TuringModGUI.Result.Invoke(new MethodInvoker(delegate
             {
-                string output = String.Join("\t", simData.IO);
-                TuringModGUI.Output.Text = "X" + output;
+                string output = String.Join("", simData.IO);
+                TuringModGUI.Result.Text = ("X" + output);
             }));
         }
 
